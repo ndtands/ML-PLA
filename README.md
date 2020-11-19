@@ -16,3 +16,25 @@
   <img src="pla_vi.gif" />
 </p>
 
+### Ứng dụng
+- Hàm số xác định class của Perceptron: label(x)=sgn(w.T*x) có thể được mô tả như 1 network.
+<p align="center">
+  <img src="n.png" />
+</p>
+
+- Hay y = sgn(z).
+- Trong giải thuật PLA là ta đi tìm các weights (w) sao cho ứng mỗi x_i đặt ở output, cho ra input của network trùng với nhãn y_i tương ứng.
+- Khi đó hàm số sgn(z) gọi là **activation function**. Có nhiều hàm như vậy: tanh(x), sigmoi(x),...
+- Dễ dàng nhận xét thấy, nếu y=z thì nó là hàm mô tả thuật toán Linear Regresstion.
+
+### Vấn đề phát sinh
+- PLA có thể cho vô số nghiệm khác nhau.
+- PLA đòi hỏi dữ liệu linearly separable: Nếu có một điểm thuộc class này lại nằm trong class kia thì PLA sẽ không làm việc được vì luôn có ít nhất 1 điểm bị misclassified. Nên giải thuật sẽ không hội tụ.
+=> Việc không hội tụ với dữ liệu gần linearly separable là một nhược điểm lớn. 
+- Để cải biến chuyện này, người ta đã đưa ra một thuật toán Pocket Algorithm
+
+### Pocket Algorithm
+- Nếu như giải thuật PLA cố gắng phân 2 class hoàn toàn, thì giải thuật PA sẽ cố gắng đi kiếm w mà có số lượng misclassified nhỏ nhất.
+=> Thuật toán này giống với thuật toán tìm phần tử nhỏ nhất trong 1 mảng.
+
+
